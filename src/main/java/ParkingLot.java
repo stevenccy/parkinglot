@@ -31,6 +31,10 @@ public class ParkingLot {
             cars.remove(c);
         }
     }
+    
+    public int getRemainSpace(){
+    	return this.maxNoOfLot - this.cars.size();
+    }
 
     public void setMaxNoOfLot(int maxNoOfLot) {
         this.maxNoOfLot = maxNoOfLot;
