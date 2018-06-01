@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ParkingLot {
 
@@ -12,16 +13,20 @@ public class ParkingLot {
 
     public void park(Car c) {
 
-        if (cars.indexOf(c) >= 0) {
+        if (hasSameCar(c)) {
             System.out.println("Car already parked");
-        }
-        if (cars.size() < maxNoOfLot) {
+        } else if (cars.size() < maxNoOfLot) {
             cars.add(c);
         } else {
             System.out.println("car pool is full");
         }
 
 
+    }
+
+    public boolean hasSameCar(Car c) {
+        Car matchedCar = cars.stream().filter(car -> car.getCarLicense().equals(c.getCarLicense())).findAny().orElse(null);
+        return Objects.nonNull(matchedCar);
     }
 
     public void unPark(Car c) {
