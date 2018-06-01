@@ -35,7 +35,7 @@ public class ParkingLot {
 
     public void unPark(Car c) {
         if (cars.indexOf(c) < 0) {
-            System.out.println("Car does exist");
+            System.out.println("Car does not exist");
         } else {
             cars.remove(c);
         }

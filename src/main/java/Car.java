@@ -14,4 +14,9 @@ public class Car {
     public void setCarLicense(String carLicense) {
         this.carLicense = carLicense;
     }
+
+    @Override
+    public String toString(){
+        return this.carLicense.toString();
+    }
 }
