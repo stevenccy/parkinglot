@@ -1,30 +1,33 @@
+import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot{
+public class ParkingLot {
 
     private int maxNoOfLot;
     private List<Car> cars;
 
-    public void park(Car c){
+    public ParkingLot() {
+        cars = new ArrayList<Car>();
+    }
 
-        if(cars.indexOf(c) >= 0){
+    public void park(Car c) {
+
+        if (cars.indexOf(c) >= 0) {
             System.out.println("Car already parked");
         }
-        if(cars.size() < maxNoOfLot){
+        if (cars.size() < maxNoOfLot) {
             cars.add(c);
-        }
-        else{
+        } else {
             System.out.println("car pool is full");
         }
 
 
     }
 
-    public void unPark(Car c){
-        if(cars.indexOf(c) < 0){
+    public void unPark(Car c) {
+        if (cars.indexOf(c) < 0) {
             System.out.println("Car does exist");
-        }
-        else {
+        } else {
             cars.remove(c);
         }
     }
@@ -35,5 +38,9 @@ public class ParkingLot{
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
