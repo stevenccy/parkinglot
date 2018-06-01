@@ -1,15 +1,23 @@
+import java.util.List;
+
 public class ParkingBoy {
-    private ParkingLot packLot;
+    private List<ParkingLot> packLots;
 
-    public ParkingBoy( ParkingLot packLot){
-        this.packLot = packLot;
+    public ParkingBoy(List<ParkingLot> packLots){
+        this.packLots = packLots;
+    }
+    
+    public ParkingLot findBestPackingLot(){
+    	ParkingLot bestPl = null;
+    	for(ParkingLot pl : packLots){
+    		if(bestPl == null ){
+    			bestPl = pl;
+    			continue;
+    		}
+    		bestPl = (pl.getRemainSpace() > bestPl.getRemainSpace()) ?  pl: bestPl;
+    	}
+    	return bestPl;
     }
 
-    public ParkingLot getPackLot() {
-        return packLot;
-    }
-
-    public void setPackLot(ParkingLot packLot) {
-        this.packLot = packLot;
-    }
+  
 }
