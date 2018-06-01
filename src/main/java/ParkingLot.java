@@ -3,6 +3,10 @@ import java.util.List;
 
 public class ParkingLot {
 
+    public int getMaxNoOfLot() {
+        return maxNoOfLot;
+    }
+
     private int maxNoOfLot;
     private List<Car> cars;
 
@@ -46,5 +50,14 @@ public class ParkingLot {
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public double getRemainPersentage(){
+        if(this.getMaxNoOfLot() == 0){
+            return 0.0;
+        }else{
+            return this.getRemainSpace()/this.getMaxNoOfLot();
+        }
+
     }
 }

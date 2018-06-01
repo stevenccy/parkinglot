@@ -19,5 +19,18 @@ public class ParkingBoy {
     	return bestPl;
     }
 
+    public ParkingLot findBestParkingLotWithPersentage(){
+		ParkingLot bestPl = null;
+		for(ParkingLot pl : packLots){
+			if(bestPl == null ){
+				bestPl = pl;
+				continue;
+			}
+			bestPl = (pl.getRemainPersentage() > bestPl.getRemainPersentage()) ?  pl: bestPl;
+		}
+		return bestPl;
+
+	}
+
   
 }
