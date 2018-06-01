@@ -1,10 +1,19 @@
 import java.util.List;
 
 public class ParkingBoy {
-    private List<ParkingLot> packLots;
+
+	private List<ParkingLot> packLots;
+
+	public List<ParkingLot> getPackLots() {
+		return packLots;
+	}
+
+	public void setPackLots(List<ParkingLot> packLots) {
+		this.packLots = packLots;
+	}
 
     public ParkingBoy(List<ParkingLot> packLots){
-        this.packLots = packLots;
+        this.setPackLots(packLots);
     }
     
     public ParkingLot findBestPackingLot(){

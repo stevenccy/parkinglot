@@ -33,4 +33,13 @@ public class ParkingBoyTest {
 
         Assert.assertEquals(lot,bestLog);
     }
+
+    @Test
+    public void managerTesting(){
+        ParkingLot lot = new ParkingLot();
+        lot.setMaxNoOfLot(TEN);
+        ParkingLot lot2 = new ParkingLot();
+        lot2.setMaxNoOfLot(TEN);
+        ParkingManager manager = new ParkingManager(Arrays.asList(lot,lot2));
+    }
 }
